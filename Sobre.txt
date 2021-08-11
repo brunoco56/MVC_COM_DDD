@@ -1,4 +1,9 @@
-Referência: https://alexalvess.medium.com/criando-uma-api-em-net-core-baseado-na-arquitetura-ddd-2c6a409c686
+Referências:
+https://alexalvess.medium.com/criando-uma-api-em-net-core-baseado-na-arquitetura-ddd-2c6a409c686
+https://docs.microsoft.com/pt-br/ef/core
+https://docs.microsoft.com/pt-br/aspnet/core/tutorials/first-mvc-app/validation?view=aspnetcore-5.0
+https://docs.microsoft.com/pt-br/aspnet/core/fundamentals/localization?view=aspnetcore-5.0
+https://docs.microsoft.com/pt-br/dotnet/api/system.datetime?view=net-5.0
 
 1- Camada de aplicação: responsável pelo projeto principal, pois é onde será desenvolvido os controladores e serviços da API. Tem a função de receber todas as requisições e direcioná-las a algum serviço para executar uma determinada ação.
 Possui referências das camadas Service e Domain.
@@ -14,6 +19,6 @@ Possui referências das camadas Domain, Infra.Data e Infra.CrossCutting.
 Possui referências da camada Domain
 
 
-Helper - Aqui encontra-se ajuda, referências e outros contextos para o desenvolvimento desta aplicação.
+Helper - Aqui encontra-se ajuda, referências e outros contextos ultilizados para o desenvolvimento desta aplicação.
 ____________________________________________________________________________________________________________
 
