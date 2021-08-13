@@ -23,4 +23,8 @@
     <ProjectReference Include="..\Servicos\Services.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Clientes\" />
+  </ItemGroup>
+
 </Project>

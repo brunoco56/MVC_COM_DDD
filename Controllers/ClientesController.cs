@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Services.Validators;
+using StandBy.Models;
 
 namespace StandBy.Controllers
 {
@@ -12,8 +13,7 @@ namespace StandBy.Controllers
             _baseUserService = baseUserService;
         }
 
-        //ClienteViewModel clienteView = new ClienteViewModel();
-
+       
         public ActionResult Index()
         {
             return View();
@@ -22,14 +22,24 @@ namespace StandBy.Controllers
 
 
         [HttpPost]
-        public IActionResult Create([FromBody] Cliente cliente)
+        public IActionResult Create([FromBody] ClienteViewModel cliente)
         {
             if (cliente == null)
                 return NotFound();
 
-            var u = _baseUserService.Add<ClienteValidator>(cliente).Id;
+            var clienteCriado = _baseUserService.Add<ClienteValidator>(new Cliente()
+             {
+                 Capital=cliente.Capital,
+                 Classificacao= cliente.Classificacao,
+                 Cnpj=cliente.Cnpj,
+                 Data_Fundacao = cliente.Data_Fundacao,
+                 Quarentena =cliente.Quarentena,
+                 Status_Cliente = cliente.Status_Cliente,
+                 Razao_Social = cliente.Razao_Social
+                 
+             });
             
-            return View(u);
+            return View(clienteCriado);
               
         }
 
